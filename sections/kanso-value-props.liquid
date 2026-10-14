@@ -1,0 +1,152 @@
+{%- style -%}
+  .kanso-value-props-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+{%- endstyle -%}
+
+<section class="kanso-value-props kanso-value-props-{{ section.id }}" aria-labelledby="PropsTitle-{{ section.id }}">
+  <div class="kanso-value-props-container">
+    {%- if section.settings.eyebrow != blank or section.settings.heading != blank -%}
+      <div class="kanso-section-header">
+        {%- if section.settings.eyebrow != blank -%}
+          <div class="kanso-section-eyebrow">{{ section.settings.eyebrow }}</div>
+        {%- endif -%}
+        {%- if section.settings.heading != blank -%}
+          <h2 id="PropsTitle-{{ section.id }}" class="kanso-section-title">{{ section.settings.heading }}</h2>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    <div class="kanso-props-grid">
+      {%- for block in section.blocks -%}
+        <div class="kanso-prop-card" {{ block.shopify_attributes }}>
+          <div class="kanso-prop-icon">
+            {%- case block.settings.icon -%}
+              {%- when 'shield' -%}
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+              {%- when 'zap' -%}
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                </svg>
+              {%- else -%}
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                  <line x1="8" y1="21" x2="16" y2="21"></line>
+                  <line x1="12" y1="17" x2="12" y2="21"></line>
+                </svg>
+            {%- endcase -%}
+          </div>
+          <h3 class="kanso-prop-title">{{ block.settings.title }}</h3>
+          <p class="kanso-prop-text">{{ block.settings.description }}</p>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Kanso Value Props",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow / Category",
+      "default": "ENGINEERED FOR FOCUS"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Section Title",
+      "default": "Built with Intention. Zero Distractions."
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 40,
+      "max": 140,
+      "step": 10,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 40,
+      "max": 140,
+      "step": 10,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 90
+    }
+  ],
+  "blocks": [
+    {
+      "type": "prop_card",
+      "name": "Feature Card",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "options": [
+            { "value": "monitor", "label": "Hardware / Monitor" },
+            { "value": "zap", "label": "Energy / Magnetism" },
+            { "value": "shield", "label": "Warranty / Shield" }
+          ],
+          "default": "monitor"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "CNC Aluminum & Natural Materials"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "Machined aircraft-grade aluminum paired with high-density wool felt and natural walnut accents."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Kanso Value Props",
+      "blocks": [
+        {
+          "type": "prop_card",
+          "settings": {
+            "icon": "monitor",
+            "title": "CNC Aluminum & Natural Materials",
+            "description": "Machined aircraft-grade aluminum paired with high-density wool felt and natural walnut accents."
+          }
+        },
+        {
+          "type": "prop_card",
+          "settings": {
+            "icon": "zap",
+            "title": "Zero Cable Friction",
+            "description": "Modular magnetic pathways engineered to conceal power supplies and wires out of sight."
+          }
+        },
+        {
+          "type": "prop_card",
+          "settings": {
+            "icon": "shield",
+            "title": "Built for Decades",
+            "description": "Structural hardware with no moving parts to fail. 30-day trial and 3-year structural guarantee."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

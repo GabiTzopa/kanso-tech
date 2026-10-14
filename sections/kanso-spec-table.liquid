@@ -1,0 +1,155 @@
+{%- style -%}
+  .kanso-spec-section-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+{%- endstyle -%}
+
+<section id="specs" class="kanso-spec-section kanso-spec-section-{{ section.id }}" aria-label="{{ section.settings.heading | escape }}">
+  <div class="kanso-spec-container">
+    <div class="kanso-section-header">
+      {%- if section.settings.eyebrow != blank -%}
+        <div class="kanso-section-eyebrow">{{ section.settings.eyebrow }}</div>
+      {%- endif -%}
+      {%- if section.settings.heading != blank -%}
+        <h2 class="kanso-section-title">{{ section.settings.heading }}</h2>
+      {%- endif -%}
+      {%- if section.settings.subheading != blank -%}
+        <p style="color: var(--kanso-text-secondary); max-width: 600px; margin: 12px auto 0; font-size: 0.95rem;">
+          {{ section.settings.subheading }}
+        </p>
+      {%- endif -%}
+    </div>
+
+    <div class="kanso-spec-table-wrap">
+      <table class="kanso-spec-table">
+        <thead>
+          <tr>
+            <th style="width: 28%;">Technical Specification</th>
+            <th class="kanso-spec-highlight" style="width: 24%;">
+              <div>The Kanso Horizon</div>
+              <div style="font-size: 0.8rem; font-weight: normal; margin-top: 4px; color: var(--kanso-text-primary);">Modular Desk Riser • €129.00</div>
+            </th>
+            <th style="width: 24%;">
+              <div>The MagRail</div>
+              <div style="font-size: 0.8rem; font-weight: normal; margin-top: 4px; color: var(--kanso-text-primary);">Cable Routing Set • €34.00</div>
+            </th>
+            <th style="width: 24%;">
+              <div>Hybrid Desk Mat</div>
+              <div style="font-size: 0.8rem; font-weight: normal; margin-top: 4px; color: var(--kanso-text-primary);">Felt & Vegan Suede • €48.00</div>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="font-weight: 600; color: var(--kanso-text-primary);">Primary Material</td>
+            <td>Sandblasted CNC 6063 Aluminum + Natural Cork</td>
+            <td>Cast Zinc Alloy + Neodymium N52 Magnets</td>
+            <td>Merino Wool Blend + Textured Vegan Leather</td>
+          </tr>
+          <tr>
+            <td style="font-weight: 600; color: var(--kanso-text-primary);">Dimensions</td>
+            <td>105 cm × 23 cm × 11 cm</td>
+            <td>28 mm × 18 mm (Per Anchor)</td>
+            <td>900 mm × 400 mm × 4 mm</td>
+          </tr>
+          <tr>
+            <td style="font-weight: 600; color: var(--kanso-text-primary);">Load / Weight Rating</td>
+            <td><span class="kanso-spec-pill">Supports up to 45 kg</span></td>
+            <td>Counterweighted (Up to 350g cable tension)</td>
+            <td>Non-slip weighted edge anchors</td>
+          </tr>
+          <tr>
+            <td style="font-weight: 600; color: var(--kanso-text-primary);">Cable Management</td>
+            <td>Integrated rear pass-through channel</td>
+            <td>Modular channel (cables up to 6.5mm)</td>
+            <td>Embedded magnetic alignment notch</td>
+          </tr>
+          <tr>
+            <td style="font-weight: 600; color: var(--kanso-text-primary);">Hardware Finish</td>
+            <td>Matte Space Gray / Anodized Obsidian</td>
+            <td>Matte Obsidian / Slate Gray</td>
+            <td>Anthracite Charcoal</td>
+          </tr>
+          <tr>
+            <td style="font-weight: 600; color: var(--kanso-text-primary);">EU Warranty & Trial</td>
+            <td>3-Year Structural / 30-Day Trial</td>
+            <td>Lifetime Mechanical Replacement</td>
+            <td>2-Year Wear Guarantee</td>
+          </tr>
+          <tr>
+            <td style="font-weight: 600; color: var(--kanso-text-primary);">Action</td>
+            <td>
+              <a href="/products/the-kanso-horizon-modular-dual-monitor-laptop-riser" class="button button--kanso-primary" style="padding: 8px 16px !important; font-size: 0.75rem !important;">
+                View Riser
+              </a>
+            </td>
+            <td>
+              <a href="/products/the-magrail-magnetic-modular-cable-routing-system-set-of-4" class="button button--kanso-secondary" style="padding: 8px 16px !important; font-size: 0.75rem !important;">
+                View MagRail
+              </a>
+            </td>
+            <td>
+              <a href="/products/kanso-wool-felt-vegan-leather-hybrid-desk-mat" class="button button--kanso-secondary" style="padding: 8px 16px !important; font-size: 0.75rem !important;">
+                View Desk Mat
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Kanso Spec Table",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow Text",
+      "default": "SYSTEM ARCHITECTURE"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Precision Engineering Specifications"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Every millimeter calibrated for structural stability, optical mouse tracking, and seamless magnetic wire containment."
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 40,
+      "max": 140,
+      "step": 10,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 40,
+      "max": 140,
+      "step": 10,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 90
+    }
+  ],
+  "presets": [
+    {
+      "name": "Kanso Spec Table"
+    }
+  ]
+}
+{% endschema %}

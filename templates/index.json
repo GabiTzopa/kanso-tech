@@ -1,75 +1,127 @@
 {
   "sections": {
-    "image_banner": {
-      "type": "image-banner",
+    "kanso_hero": {
+      "type": "kanso-hero",
       "blocks": {
-        "heading": {
-          "type": "heading",
+        "pill_1": {
+          "type": "feature_pill",
           "settings": {
-            "heading": "Browse our latest products",
-            "heading_size": "h0"
+            "stat_text": "Aerospace Grade Aluminum"
           }
         },
-        "button": {
-          "type": "buttons",
+        "pill_2": {
+          "type": "feature_pill",
           "settings": {
-            "button_label_1": "Shop all",
-            "button_link_1": "shopify://collections/all",
-            "button_style_secondary_1": true,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
+            "stat_text": "45kg Dual Display Support"
+          }
+        },
+        "pill_3": {
+          "type": "feature_pill",
+          "settings": {
+            "stat_text": "3-Year Structural Warranty"
           }
         }
       },
       "block_order": [
-        "heading",
-        "button"
+        "pill_1",
+        "pill_2",
+        "pill_3"
       ],
       "settings": {
-        "image_overlay_opacity": 40,
-        "image_height": "large",
-        "desktop_content_position": "bottom-center",
-        "show_text_box": false,
-        "image_behavior": "none",
-        "desktop_content_alignment": "center",
-        "color_scheme": "scheme-3",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": false,
-        "show_text_below": false
+        "badge_text": "ARCHITECTURAL DESK GEAR",
+        "heading": "Order, Distilled. Precision Workspace Tools.",
+        "subheading": "KansoTech designs modular desk architecture and minimalist peripherals—crafted to remove visual noise and amplify your daily output.",
+        "button_label_1": "Explore the Ecosystem",
+        "button_link_1": "shopify://collections/all",
+        "button_label_2": "View Specifications",
+        "button_link_2": "#specs",
+        "padding_top": 100,
+        "padding_bottom": 120
+      }
+    },
+    "kanso_value_props": {
+      "type": "kanso-value-props",
+      "blocks": {
+        "card_1": {
+          "type": "prop_card",
+          "settings": {
+            "icon": "monitor",
+            "title": "CNC Aluminum & Natural Materials",
+            "description": "Machined aircraft-grade aluminum paired with high-density wool felt and natural walnut accents."
+          }
+        },
+        "card_2": {
+          "type": "prop_card",
+          "settings": {
+            "icon": "zap",
+            "title": "Zero Cable Friction",
+            "description": "Modular magnetic pathways engineered to conceal power supplies and wires out of sight."
+          }
+        },
+        "card_3": {
+          "type": "prop_card",
+          "settings": {
+            "icon": "shield",
+            "title": "Built for Decades",
+            "description": "Structural hardware with no moving parts to fail. 30-day trial and 3-year structural guarantee."
+          }
+        }
+      },
+      "block_order": [
+        "card_1",
+        "card_2",
+        "card_3"
+      ],
+      "settings": {
+        "eyebrow": "ENGINEERED FOR FOCUS",
+        "heading": "Built with Intention. Zero Distractions.",
+        "padding_top": 80,
+        "padding_bottom": 90
       }
     },
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
-        "title": "Featured products",
-        "heading_size": "h2",
-        "description": "",
-        "show_description": false,
+        "title": "The Kanso Ecosystem",
+        "heading_size": "h1",
+        "description": "Curated minimalist essentials for the modern architectural workspace.",
+        "show_description": true,
         "description_style": "body",
         "collection": "all",
-        "products_to_show": 8,
-        "columns_desktop": 4,
+        "products_to_show": 6,
+        "columns_desktop": 3,
         "color_scheme": "scheme-1",
         "full_width": false,
         "show_view_all": true,
-        "view_all_style": "solid",
+        "view_all_style": "outline",
         "enable_desktop_slider": false,
-        "swipe_on_mobile": false,
-        "image_ratio": "adapt",
+        "swipe_on_mobile": true,
+        "image_ratio": "square",
         "image_shape": "default",
         "show_secondary_image": true,
         "show_vendor": false,
         "show_rating": false,
-        "quick_add": "none",
-        "columns_mobile": "2",
-        "padding_top": 44,
-        "padding_bottom": 36
+        "quick_add": "standard",
+        "columns_mobile": "1",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "kanso_spec_table": {
+      "type": "kanso-spec-table",
+      "settings": {
+        "eyebrow": "SYSTEM ARCHITECTURE",
+        "heading": "Precision Engineering Specifications",
+        "subheading": "Every millimeter calibrated for structural stability, optical mouse tracking, and seamless magnetic wire containment.",
+        "padding_top": 80,
+        "padding_bottom": 90
       }
     }
   },
   "order": [
-    "image_banner",
-    "featured_collection"
+    "kanso_hero",
+    "kanso_value_props",
+    "featured_collection",
+    "kanso_spec_table"
   ]
 }
